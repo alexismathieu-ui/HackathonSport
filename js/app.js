@@ -33,7 +33,7 @@ const CHALL = [
   ['30 jours de yoga', 'Individuel', 12, 30, 'jours']
 ];
 const GROUPS = [
-  ['Yoga du matin', 'Camille + 4 voisins', 'Mar · 7h30', false],
+  ['Yoga du matin', 'Géraldine + 4 voisins', 'Mar · 7h30', false],
   ['Course douce du dimanche', 'Marc + 6 voisins', 'Dim · 9h', false],
   ['Renfo entre voisines', 'Inès + 3 voisines', 'Jeu · 19h', true],
   ['Pilates 100 % voisines', 'Sana + 5 voisines', 'Sam · 10h', true],
@@ -161,7 +161,7 @@ $('#newGroup').addEventListener('click', () => {
   const t = prompt('Nom de ta session (ex : Footing du jeudi)');
   if (!t) return;
   const f = confirm('Réserver cette session aux voisines uniquement ?');
-  GROUPS.unshift([t, 'Camille (organisatrice)', 'À fixer', f]);
+  GROUPS.unshift([t, 'Géraldine (organisatrice)', 'À fixer', f]);
   renderGroups(); toast('Session créée !');
 });
 function addMsg(who, txt, me) {
