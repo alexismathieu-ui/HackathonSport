@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>placeholder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <nav class="nav" id="nav" aria-label="Navigation principale">
+    <div class="logo"><span>⚡</span><b>placeholder</b></div>
+    <button class="on" data-go="home"><i>🏠</i><span>Accueil</span></button>
+    <button data-go="defis"><i>🏆</i><span>Défis</span></button>
+    <button data-go="communaute"><i>👥</i><span>Voisins</span></button>
+    <button data-go="boutique"><i>🎁</i><span>Boutique</span></button>
+    <button data-go="services"><i>📅</i><span>Services</span></button>
+    <div class="navpts"><small>Mes points</small><b class="ptsval">0</b></div>
+  </nav>
+
+  <main>
+    <!-- 1. ACCUEIL -->
+    <section class="view on" id="home">
+      <header class="hero">
+        <div>
+          <p class="hi">Salut 👋</p>
+          <h1>placeholder</h1>
+          <p class="sub">Les Terrasses · Bâtiment B — prête à bouger ?</p>
+        </div>
+        <div class="stats">
+          <div class="card c-blue"><small>Mes points</small><b class="num ptsval">0</b></div>
+          <div class="card c-sun"><span class="flame">🔥</span><b class="num">5</b><small>jours de suite</small></div>
+          <div class="card ring">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42"/><circle id="arc" class="arc" cx="50" cy="50" r="42"/></svg>
+            <div><b class="num" id="pct">0%</b><small>Défi du mois</small></div>
+          </div>
+        </div>
+      </header>
+      <div class="grid2">
+        <article class="card"><h2>Actus du bâtiment</h2><ul class="list" id="feed"></ul></article>
+        <article class="card c-lime">
+          <h2>Salle modulable</h2>
+          <p class="live"><span class="dot"></span><span id="roomState"></span></p>
+          <div class="seg" id="modes"></div>
+          <button class="btn" data-go="services">Réserver un créneau</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. DÉFIS -->
+    <section class="view" id="defis">
+      <h1>Défis & entraînement</h1>
+      <div class="bar"><div class="chips" id="chips"></div>
+        <button class="btn pulse" id="scanBtn">📷 Scanner un QR code</button></div>
+      <div class="grid3" id="programs"></div>
+      <h2 class="mt">Défis en cours</h2>
+      <div class="grid2" id="challenges"></div>
+    </section>
+
+    <!-- 3. COMMUNAUTÉ -->
+    <section class="view" id="communaute">
+      <h1>Communauté & voisins</h1>
+      <div class="bar">
+        <label class="switch"><input type="checkbox" id="women"><span></span>Groupe Voisines uniquement</label>
+        <button class="btn" id="newGroup">+ Créer une session</button>
+      </div>
+      <div class="grid2">
+        <article class="card"><h2>Sessions entre voisins</h2><ul class="list" id="groups"></ul></article>
+        <article class="card chat"><h2>Discussion de copropriété</h2>
+          <div class="msgs" id="msgs"></div>
+          <div class="send"><input id="msgIn" placeholder="Un conseil, un prêt de matériel ?" aria-label="Message"><button class="btn" id="msgBtn">Envoyer</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. BOUTIQUE -->
+    <section class="view" id="boutique">
+      <h1>Boutique Intersport</h1>
+      <div class="card c-blue wallet"><small>Solde convertible</small><b class="num ptsval">0</b><small>points · 100 pts = 1 € de remise</small></div>
+      <div class="grid3" id="rewards"></div>
+    </section>
+
+    <!-- 5. SERVICES -->
+    <section class="view" id="services">
+      <h1>Réservation & services</h1>
+      <div class="grid2">
+        <article class="card"><h2>Professionnels de santé</h2><div id="pros"></div></article>
+        <article class="card"><h2>Planning de la salle · aujourd'hui</h2><ul class="tl" id="timeline"></ul></article>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="overlay" id="scan" hidden>
+  <div class="card scanbox"><div class="viewfinder"><i></i></div><p id="scanTxt">Vise le QR code de la machine…</p></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
